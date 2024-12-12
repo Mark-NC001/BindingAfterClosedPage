@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingAfterClosedPage.MainPage">
+
+	<StackLayout Margin="10">
+		<Label Text="This form owns an instance of PeopleViewModel (stored in _viewModel)" />
+		<Label Text="And the PeopleViewModel has a ObservableCollection of PersonViewModel objects stored in it's People property." />
+		<Label Text="Clicking Open People Page will show a new page with a ListView bound to that People collection." />
+		<Label Text="And when on that page, click the Back toolbar item to do a PopModalAsync to end up back at this page" />
+		<Label Text="And then click 'Clear People Collection' which will call a Clear on the ObservableCollection." />
+		<Label Text="That generates a NullReferenceException in Microsoft.Maui.Controls.Handlers.Compatibility.ListViewRenderer.ClearSizeEstimate()" />
+		<Button Text="Open People Page" Clicked="OpenPeoplePage_Clicked" />
+		<Button Text="Clear People Collection" Clicked="ClearPeople_Clicked" />
+	</StackLayout>
+</ContentPage>
